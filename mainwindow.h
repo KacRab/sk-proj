@@ -61,16 +61,13 @@ private slots:
 
     void on_war_stala_editingFinished();
 
-    void on_pushButton_clicked();
-    // void onNetworkConfigured(bool isController, QString ip, quint16 port);
-    // void initNetwork(bool isController, const QString &ip, quint16 port);
-
     void on_pushButtonSerwer_clicked();
 
+    void on_pushButtonKlient_clicked();
+
 private:
-    // NetworkSettings * networkSettings = nullptr;
-
-
+    ServerMV * serwer = nullptr;
+    ClientMW * klient = nullptr;
 
     std::vector<double> A;
     std::vector<double> B;

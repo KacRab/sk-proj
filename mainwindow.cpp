@@ -453,61 +453,23 @@ void MainWindow::on_war_stala_editingFinished()
     confGen();
 }
 
-void MainWindow::on_pushButton_clicked()
-{
-
-}
-
-// void MainWindow::onNetworkConfigured(bool isController, QString ip, quint16 port) {
-//     initNetwork(isController, ip, port);
-// }
-
-
 void MainWindow::on_pushButtonSerwer_clicked()
 {
 
-    // if (!networkSettings) {
-    //     networkSettings = new NetworkSettings(this);
-    //     // connect(networkSettings, &NetworkSettings::networkConfigReady,
-    //     //         this, &MainWindow::onNetworkConfigured);
-    // }
-    // networkSettings->show();
-    // networkSettings->raise();
-    // networkSettings->activateWindow();
+    if (!serwer) {
+            serwer = new ServerMV(this);
+        }
+        serwer->show();
+        serwer->raise();
+        serwer->activateWindow();
 }
 
-// void MainWindow::initNetwork(bool isController, const QString &ip, quint16 port) {
-//     if (isController) {
-//         // Regulator = klient, łączy się z obiektem
-//         QTcpSocket *socket = new QTcpSocket(this);
-//         connect(socket, &QTcpSocket::connected, this, [](){
-//             qDebug() << "Połączono z obiektem (Model ARX)";
-//         });
-//         connect(socket, &QTcpSocket::readyRead, this, [socket, this]() {
-//             QByteArray data = socket->readAll();
-//             qDebug() << "Odebrano wartość wyjściową Y:" << data;
-//             // Tu możesz zaktualizować wykres lub logikę
-//         });
-//         socket->connectToHost(ip, port);
-//         // Zapisz socket np. do pola klasy, by móc wysyłać dane sterujące U
-//     } else {
-//         // Obiekt = serwer, oczekuje na połączenie z regulatorem
-//         QTcpServer *server = new QTcpServer(this);
-//         connect(server, &QTcpServer::newConnection, this, [server, this]() {
-//             QTcpSocket *clientSocket = server->nextPendingConnection();
-//             qDebug() << "Regulator połączony.";
-//             connect(clientSocket, &QTcpSocket::readyRead, this, [clientSocket, this]() {
-//                 QByteArray data = clientSocket->readAll();
-//                 qDebug() << "Odebrano sygnał sterujący U:" << data;
-//                 // Tu można obliczyć Y(t) i wysłać odpowiedź
-//                 QByteArray response = "0.85"; // Przykład Y(t)
-//                 clientSocket->write(response);
-//             });
-//         });
-//         if (!server->listen(QHostAddress::Any, port)) {
-//             qDebug() << "Błąd: nie można uruchomić serwera:" << server->errorString();
-//         } else {
-//             qDebug() << "Serwer nasłuchuje na porcie" << port;
-//         }
-//     }
-// }
+void MainWindow::on_pushButtonKlient_clicked()
+{
+    if (!klient) {
+        klient = new ClientMW(this);
+    }
+    klient->show();
+    klient->raise();
+    klient->activateWindow();
+}
