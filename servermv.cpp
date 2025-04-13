@@ -32,7 +32,7 @@ void ServerMV::resetServer()
 bool ServerMV::validatePort(int port)
 {
     if (port < 0 || 65535 < port) {
-        ui->statusbar->showMessage("Invalid TCP port number!");
+        ui->statusbar->showMessage("Zły numer portu TCP!");
         return false;
     }
     return true;
@@ -50,7 +50,7 @@ void ServerMV::on_startBut_clicked()
             return;
         resetServer();
         if (!m_server->startListening(port))
-            ui->statusbar->showMessage("Error starting server!");
+            ui->statusbar->showMessage("Błąd w uruchamianiu serwera!");
         else {
             ui->startBut->setText("Stop");
            // ui->commBox->setEnabled(true);
@@ -70,13 +70,13 @@ void ServerMV::updateCliNum()
 
 void ServerMV::slot_newClientConnected(QString adr)
 {
-    ui->statusbar->showMessage("New client from: " + adr);
+    ui->statusbar->showMessage("Nowy klient z: " + adr);
     updateCliNum();
 }
 
 void ServerMV::slot_clientDisconnected(int num)
 {
-    ui->statusbar->showMessage("Client " + QString::number(num) + " disconnected!");
+    ui->statusbar->showMessage("Klient " + QString::number(num) + " rozłączony!");
     updateCliNum();
 }
 
