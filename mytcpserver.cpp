@@ -1,10 +1,10 @@
 #include "mytcpserver.h"
 
 MyTCPServer::MyTCPServer(QObject *parent)
-    : QObject{parent},
-      m_server(this)
+    : QObject{parent}
+    , m_server(this)
 {
-    connect(&m_server,SIGNAL(newConnection()),this,SLOT(slot_new_client()));
+    connect(&m_server, SIGNAL(newConnection()), this, SLOT(slot_new_client()));
 }
 
 bool MyTCPServer::startListening(int port)
@@ -27,7 +27,7 @@ int MyTCPServer::getNumClients()
 
 void MyTCPServer::sendMsg(QString msg, int numCli)
 {
-    if(numCli < m_clients.length())
+    if (numCli < m_clients.length())
         m_clients.at(numCli)->write(msg.toUtf8());
 }
 
@@ -36,11 +36,11 @@ void MyTCPServer::slot_new_client()
     QTcpSocket *client = m_server.nextPendingConnection();
     m_clients.push_back(client);
     auto adr = client->peerAddress();
-    QString msgBack = "Hello client " + QString::number( m_clients.indexOf(client));
+    QString msgBack = "Hello client " + QString::number(m_clients.indexOf(client));
     client->write(msgBack.toUtf8());
 
-    connect(client,SIGNAL(disconnected()),this,SLOT(slot_client_disconnetcted()));
-    connect(client,SIGNAL(readyRead()),this,SLOT(slot_newMsg()));
+    connect(client, SIGNAL(disconnected()), this, SLOT(slot_client_disconnetcted()));
+    connect(client, SIGNAL(readyRead()), this, SLOT(slot_newMsg()));
 
     emit newClientConnected(adr.toString());
 }
@@ -61,8 +61,6 @@ void MyTCPServer::slot_newMsg()
 
 bool MyTCPServer::getClinetID()
 {
-    QTcpSocket *client = static_cast<QTcpSocket*> (QObject::sender());
+    QTcpSocket *client = static_cast<QTcpSocket *>(QObject::sender());
     return m_clients.indexOf(client);
 }
-
-

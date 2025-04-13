@@ -11,7 +11,7 @@ public:
     explicit MyTCPClient(QObject *parent = nullptr);
     void connectTo(QString address, int port);
     void disconnectFrom();
-    bool isConnected() {return m_socket.isOpen();}
+    bool isConnected() { return m_socket.isOpen(); }
     void sendMsg(QString msg);
 
 signals:

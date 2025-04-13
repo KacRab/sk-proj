@@ -11,7 +11,7 @@ class MyTCPServer : public QObject
 public:
     explicit MyTCPServer(QObject *parent = nullptr);
     bool startListening(int port);
-    bool isListening() {return m_isListening;}
+    bool isListening() { return m_isListening; }
     void stopListening();
     int getNumClients();
     void sendMsg(QString msg, int numCli);
@@ -32,7 +32,7 @@ private:
     bool m_isListening = false;
     int m_port = 12345;
     QTcpServer m_server;
-    QVector<QTcpSocket*> m_clients;
+    QVector<QTcpSocket *> m_clients;
 };
 
 #endif // MYTCPSERVER_H

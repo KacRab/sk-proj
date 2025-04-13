@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'clientmw.ui'
 **
-** Created by: Qt User Interface Compiler version 6.9.0
+** Created by: Qt User Interface Compiler version 6.8.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -11,7 +11,8 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGroupBox>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -19,6 +20,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextEdit>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -27,24 +29,29 @@ class Ui_ClientMW
 {
 public:
     QWidget *centralwidget;
-    QGroupBox *groupBox;
+    QGridLayout *gridLayout_3;
+    QGridLayout *gridLayout_2;
+    QHBoxLayout *horizontalLayout;
     QLabel *label;
-    QLabel *label_2;
-    QLineEdit *portEdit;
     QLineEdit *adr0Edit;
     QLineEdit *adr1Edit;
     QLineEdit *adr2Edit;
     QLineEdit *adr3Edit;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label_2;
+    QLineEdit *portEdit;
     QPushButton *connectBut;
     QPushButton *chkBut;
     QPushButton *disconnectBut;
-    QGroupBox *textCommGrp;
-    QLabel *label_3;
-    QTextEdit *sendText;
+    QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayout;
     QLabel *label_4;
     QTextEdit *reciveText;
-    QPushButton *sendBut;
     QPushButton *clrBut;
+    QVBoxLayout *verticalLayout_2;
+    QLabel *label_3;
+    QTextEdit *sendText;
+    QPushButton *sendBut;
     QStatusBar *statusbar;
     QMenuBar *menubar;
 
@@ -52,94 +59,151 @@ public:
     {
         if (ClientMW->objectName().isEmpty())
             ClientMW->setObjectName("ClientMW");
-        ClientMW->resize(428, 403);
+        ClientMW->resize(847, 599);
         QFont font;
         font.setPointSize(10);
         ClientMW->setFont(font);
         centralwidget = new QWidget(ClientMW);
         centralwidget->setObjectName("centralwidget");
-        groupBox = new QGroupBox(centralwidget);
-        groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(10, 10, 331, 91));
-        label = new QLabel(groupBox);
+        gridLayout_3 = new QGridLayout(centralwidget);
+        gridLayout_3->setObjectName("gridLayout_3");
+        gridLayout_2 = new QGridLayout();
+        gridLayout_2->setObjectName("gridLayout_2");
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName("horizontalLayout");
+        label = new QLabel(centralwidget);
         label->setObjectName("label");
-        label->setGeometry(QRect(10, 22, 49, 16));
         QFont font1;
         font1.setPointSize(12);
         label->setFont(font1);
-        label_2 = new QLabel(groupBox);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(10, 59, 49, 16));
-        label_2->setFont(font1);
-        portEdit = new QLineEdit(groupBox);
-        portEdit->setObjectName("portEdit");
-        portEdit->setGeometry(QRect(50, 57, 51, 22));
+
+        horizontalLayout->addWidget(label);
+
+        adr0Edit = new QLineEdit(centralwidget);
+        adr0Edit->setObjectName("adr0Edit");
         QFont font2;
         font2.setPointSize(11);
-        portEdit->setFont(font2);
-        portEdit->setAlignment(Qt::AlignCenter);
-        adr0Edit = new QLineEdit(groupBox);
-        adr0Edit->setObjectName("adr0Edit");
-        adr0Edit->setGeometry(QRect(50, 20, 41, 22));
         adr0Edit->setFont(font2);
-        adr0Edit->setAlignment(Qt::AlignCenter);
-        adr1Edit = new QLineEdit(groupBox);
+        adr0Edit->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        horizontalLayout->addWidget(adr0Edit);
+
+        adr1Edit = new QLineEdit(centralwidget);
         adr1Edit->setObjectName("adr1Edit");
-        adr1Edit->setGeometry(QRect(100, 20, 41, 22));
         adr1Edit->setFont(font2);
-        adr1Edit->setAlignment(Qt::AlignCenter);
-        adr2Edit = new QLineEdit(groupBox);
+        adr1Edit->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        horizontalLayout->addWidget(adr1Edit);
+
+        adr2Edit = new QLineEdit(centralwidget);
         adr2Edit->setObjectName("adr2Edit");
-        adr2Edit->setGeometry(QRect(150, 20, 41, 22));
         adr2Edit->setFont(font2);
-        adr2Edit->setAlignment(Qt::AlignCenter);
-        adr3Edit = new QLineEdit(groupBox);
+        adr2Edit->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        horizontalLayout->addWidget(adr2Edit);
+
+        adr3Edit = new QLineEdit(centralwidget);
         adr3Edit->setObjectName("adr3Edit");
-        adr3Edit->setGeometry(QRect(200, 20, 41, 22));
         adr3Edit->setFont(font2);
-        adr3Edit->setAlignment(Qt::AlignCenter);
-        connectBut = new QPushButton(groupBox);
+        adr3Edit->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        horizontalLayout->addWidget(adr3Edit);
+
+
+        gridLayout_2->addLayout(horizontalLayout, 0, 0, 1, 1);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName("label_2");
+        label_2->setFont(font1);
+
+        horizontalLayout_2->addWidget(label_2);
+
+        portEdit = new QLineEdit(centralwidget);
+        portEdit->setObjectName("portEdit");
+        portEdit->setFont(font2);
+        portEdit->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        horizontalLayout_2->addWidget(portEdit);
+
+        connectBut = new QPushButton(centralwidget);
         connectBut->setObjectName("connectBut");
-        connectBut->setGeometry(QRect(110, 50, 71, 31));
-        chkBut = new QPushButton(groupBox);
+
+        horizontalLayout_2->addWidget(connectBut);
+
+        chkBut = new QPushButton(centralwidget);
         chkBut->setObjectName("chkBut");
-        chkBut->setGeometry(QRect(190, 50, 51, 31));
-        disconnectBut = new QPushButton(groupBox);
+
+        horizontalLayout_2->addWidget(chkBut);
+
+        disconnectBut = new QPushButton(centralwidget);
         disconnectBut->setObjectName("disconnectBut");
         disconnectBut->setEnabled(false);
-        disconnectBut->setGeometry(QRect(250, 50, 71, 31));
-        textCommGrp = new QGroupBox(centralwidget);
-        textCommGrp->setObjectName("textCommGrp");
-        textCommGrp->setEnabled(false);
-        textCommGrp->setGeometry(QRect(10, 100, 411, 251));
-        label_3 = new QLabel(textCommGrp);
-        label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(10, 20, 49, 16));
-        label_3->setFont(font1);
-        sendText = new QTextEdit(textCommGrp);
-        sendText->setObjectName("sendText");
-        sendText->setGeometry(QRect(80, 20, 321, 101));
-        label_4 = new QLabel(textCommGrp);
+
+        horizontalLayout_2->addWidget(disconnectBut);
+
+
+        gridLayout_2->addLayout(horizontalLayout_2, 1, 0, 1, 1);
+
+
+        gridLayout_3->addLayout(gridLayout_2, 0, 0, 1, 1);
+
+        gridLayout = new QGridLayout();
+        gridLayout->setObjectName("gridLayout");
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName("verticalLayout");
+        label_4 = new QLabel(centralwidget);
         label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(10, 130, 61, 16));
         label_4->setFont(font1);
-        reciveText = new QTextEdit(textCommGrp);
+
+        verticalLayout->addWidget(label_4);
+
+        reciveText = new QTextEdit(centralwidget);
         reciveText->setObjectName("reciveText");
-        reciveText->setGeometry(QRect(80, 130, 321, 101));
         reciveText->setReadOnly(true);
-        sendBut = new QPushButton(textCommGrp);
-        sendBut->setObjectName("sendBut");
-        sendBut->setGeometry(QRect(10, 50, 61, 61));
-        clrBut = new QPushButton(textCommGrp);
+
+        verticalLayout->addWidget(reciveText);
+
+        clrBut = new QPushButton(centralwidget);
         clrBut->setObjectName("clrBut");
-        clrBut->setGeometry(QRect(10, 160, 61, 61));
+
+        verticalLayout->addWidget(clrBut);
+
+
+        gridLayout->addLayout(verticalLayout, 0, 0, 1, 1);
+
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName("verticalLayout_2");
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName("label_3");
+        label_3->setFont(font1);
+
+        verticalLayout_2->addWidget(label_3);
+
+        sendText = new QTextEdit(centralwidget);
+        sendText->setObjectName("sendText");
+
+        verticalLayout_2->addWidget(sendText);
+
+        sendBut = new QPushButton(centralwidget);
+        sendBut->setObjectName("sendBut");
+
+        verticalLayout_2->addWidget(sendBut);
+
+
+        gridLayout->addLayout(verticalLayout_2, 0, 1, 1, 1);
+
+
+        gridLayout_3->addLayout(gridLayout, 1, 0, 1, 1);
+
         ClientMW->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(ClientMW);
         statusbar->setObjectName("statusbar");
         ClientMW->setStatusBar(statusbar);
         menubar = new QMenuBar(ClientMW);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 428, 23));
+        menubar->setGeometry(QRect(0, 0, 847, 37));
         ClientMW->setMenuBar(menubar);
 
         retranslateUi(ClientMW);
@@ -150,22 +214,20 @@ public:
     void retranslateUi(QMainWindow *ClientMW)
     {
         ClientMW->setWindowTitle(QCoreApplication::translate("ClientMW", "ClientMW", nullptr));
-        groupBox->setTitle(QCoreApplication::translate("ClientMW", "Connection", nullptr));
         label->setText(QCoreApplication::translate("ClientMW", "IP:", nullptr));
-        label_2->setText(QCoreApplication::translate("ClientMW", "Port:", nullptr));
-        portEdit->setText(QCoreApplication::translate("ClientMW", "12345", nullptr));
         adr0Edit->setText(QCoreApplication::translate("ClientMW", "127", nullptr));
         adr1Edit->setText(QCoreApplication::translate("ClientMW", "0", nullptr));
         adr2Edit->setText(QCoreApplication::translate("ClientMW", "0", nullptr));
         adr3Edit->setText(QCoreApplication::translate("ClientMW", "1", nullptr));
-        connectBut->setText(QCoreApplication::translate("ClientMW", "Connect", nullptr));
-        chkBut->setText(QCoreApplication::translate("ClientMW", "Check", nullptr));
-        disconnectBut->setText(QCoreApplication::translate("ClientMW", "Disconnect", nullptr));
-        textCommGrp->setTitle(QCoreApplication::translate("ClientMW", "Text Comm", nullptr));
-        label_3->setText(QCoreApplication::translate("ClientMW", "Send:", nullptr));
-        label_4->setText(QCoreApplication::translate("ClientMW", "Recive:", nullptr));
-        sendBut->setText(QCoreApplication::translate("ClientMW", "Send", nullptr));
-        clrBut->setText(QCoreApplication::translate("ClientMW", "Clear", nullptr));
+        label_2->setText(QCoreApplication::translate("ClientMW", "Port:", nullptr));
+        portEdit->setText(QCoreApplication::translate("ClientMW", "12345", nullptr));
+        connectBut->setText(QCoreApplication::translate("ClientMW", "Po\305\202\304\205cz", nullptr));
+        chkBut->setText(QCoreApplication::translate("ClientMW", "Sprawd\305\272", nullptr));
+        disconnectBut->setText(QCoreApplication::translate("ClientMW", "Roz\305\202\304\205cz", nullptr));
+        label_4->setText(QCoreApplication::translate("ClientMW", "Otrzymany", nullptr));
+        clrBut->setText(QCoreApplication::translate("ClientMW", "Wyczy\305\233\304\207", nullptr));
+        label_3->setText(QCoreApplication::translate("ClientMW", "Wys\305\202any:", nullptr));
+        sendBut->setText(QCoreApplication::translate("ClientMW", "Wy\305\233lij", nullptr));
     } // retranslateUi
 
 };
