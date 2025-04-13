@@ -26,11 +26,11 @@ bool ClientMW::validateConnectionData(QString adr, int port)
 {
     QHostAddress ipAdr(adr);
     if (ipAdr.protocol() != QAbstractSocket::IPv4Protocol) {
-        ui->statusbar->showMessage("Zły  adres IPv4!");
+        ui->statusbar->showMessage("Błędny adres IPv4!");
         return false;
     }
     if (port < 0 || 65535 < port) {
-        ui->statusbar->showMessage("zly numer portu TCP!");
+        ui->statusbar->showMessage("Błędny numer portu TCP!");
         return false;
     }
     return true;
@@ -63,9 +63,9 @@ void ClientMW::on_connectBut_clicked()
 void ClientMW::on_chkBut_clicked()
 {
     if (m_client->isConnected())
-        ui->statusbar->showMessage("Połączony");
+        ui->statusbar->showMessage("Połączono");
     else
-        ui->statusbar->showMessage("Rozłączony");
+        ui->statusbar->showMessage("Rozłączono");
 }
 
 void ClientMW::on_disconnectBut_clicked()
@@ -87,14 +87,14 @@ void ClientMW::on_clrBut_clicked()
 
 void ClientMW::slot_connected(QString adr, int port)
 {
-    ui->statusbar->showMessage("Połączony z " + adr + " " + QString::number(port));
+    ui->statusbar->showMessage("Połączono do " + adr + " " + QString::number(port));
     ui->disconnectBut->setEnabled(true);
   //  ui->textCommGrp->setEnabled(true);
 }
 
 void ClientMW::slot_disconnected()
 {
-    ui->statusbar->showMessage("Rozłączony");
+    ui->statusbar->showMessage("Rozłączono");
     ui->disconnectBut->setEnabled(false);
   //  ui->textCommGrp->setEnabled(false);
 }

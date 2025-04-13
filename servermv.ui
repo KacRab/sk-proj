@@ -6,122 +6,124 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>623</width>
-    <height>493</height>
+    <width>678</width>
+    <height>459</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>ServerMV</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <layout class="QGridLayout" name="gridLayout_4">
-      <item row="0" column="0" colspan="2">
-       <layout class="QGridLayout" name="gridLayout_3">
-        <item row="0" column="0">
-         <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_2">
-            <property name="text">
-             <string>Otrzymany</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QTextEdit" name="recEdit">
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QPushButton" name="clrBut">
-            <property name="text">
-             <string>Wyczyść</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="0" column="1">
-         <layout class="QGridLayout" name="gridLayout_2">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_3">
-            <property name="text">
-             <string>Wysłany</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QTextEdit" name="sendText"/>
-          </item>
-          <item row="2" column="0">
-           <widget class="QPushButton" name="sendBut">
-            <property name="text">
-             <string>wyślij</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Otrzymany</string>
+        </property>
+       </widget>
       </item>
-      <item row="1" column="0">
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QLabel" name="label">
-          <property name="font">
-           <font>
-            <pointsize>11</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>port:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="portEdit">
-          <property name="text">
-           <string>12345</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignmentFlag::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="startBut">
-          <property name="text">
-           <string>Start</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+      <item>
+       <widget class="QTextEdit" name="recEdit">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
-      <item row="1" column="1">
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QLabel" name="label_4">
-          <property name="font">
-           <font>
-            <pointsize>11</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>NumerKlienta</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QSpinBox" name="cliNum">
-          <property name="maximum">
-           <number>0</number>
-          </property>
-         </widget>
-        </item>
-       </layout>
+      <item>
+       <widget class="QPushButton" name="clrBut">
+        <property name="text">
+         <string>Wyczyść</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Wysłany</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="sendText"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="sendBut">
+        <property name="text">
+         <string>Wyślij</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>port:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="portEdit">
+        <property name="text">
+         <string>12345</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="startBut">
+        <property name="text">
+         <string>Start</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>NumerKlienta</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="cliNum">
+        <property name="maximum">
+         <number>0</number>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -132,8 +134,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>623</width>
-     <height>37</height>
+     <width>678</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>
