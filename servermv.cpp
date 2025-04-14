@@ -43,7 +43,6 @@ void ServerMV::on_startBut_clicked()
     if (m_server != nullptr && m_server->isListening()) {
         m_server->stopListening();
         ui->startBut->setText("Start");
-       // ui->commBox->setEnabled(false);
     } else {
         int port = ui->portEdit->text().toInt();
         if (!validatePort(port))
@@ -53,7 +52,6 @@ void ServerMV::on_startBut_clicked()
             ui->statusbar->showMessage("Błąd otwierania serwera!");
         else {
             ui->startBut->setText("Stop");
-           // ui->commBox->setEnabled(true);
             ui->cliNum->setEnabled(false);
             ui->sendBut->setEnabled(false);
         }
