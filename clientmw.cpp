@@ -50,7 +50,6 @@ void ClientMW::resetClient()
 
 void ClientMW::on_connectBut_clicked()
 {
-    //Pobranie i walidacja danych połączenia
 
     QString adr = composeIPAddres();
     int port = ui->portEdit->text().toInt();
@@ -89,14 +88,12 @@ void ClientMW::slot_connected(QString adr, int port)
 {
     ui->statusbar->showMessage("Połączono do " + adr + " " + QString::number(port));
     ui->disconnectBut->setEnabled(true);
-  //  ui->textCommGrp->setEnabled(true);
 }
 
 void ClientMW::slot_disconnected()
 {
     ui->statusbar->showMessage("Rozłączono");
     ui->disconnectBut->setEnabled(false);
-  //  ui->textCommGrp->setEnabled(false);
 }
 
 void ClientMW::slot_messageRecived(QString msg)
